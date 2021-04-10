@@ -1,0 +1,16 @@
+MODULE=Schedule
+ACTIVATE_MODULE=Modul aktivieren
+MODULE_RESET=Modul zurücksetzen
+VEREINSNAME=Vereinsname
+VEREINSNUMMER=SFV Vereinsnummer
+NEW_TEAM=Neues Team
+ADD=Hinzufügen
+RESET=Zurücksetzen
+REMOVE=Löschen
+CHOOSE_TEAM=-Bitte Team auswählen-
+TEAM_NAME=Name
+TEAM_URL=URL auf football.ch
+FIRST_TEAM=1. Mannschaft
+CUSTOM_TEAM=KiFu Team
+BLOCK_ONE_TITLE=Aktiv Teams
+BLOCK_TWO_TITLE=Junioren Teams

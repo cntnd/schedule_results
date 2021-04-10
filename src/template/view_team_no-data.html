@@ -1,0 +1,10 @@
+<li class="game">
+    <span class="game__team">
+        {if $spiel.data_url neq ''}
+            <a href="{$spiel.data_url}" target="_blank">{$spiel.data_team}</a>
+        {else}
+            {$spiel.data_team}
+        {/if}
+    </span>
+    <span class="game__no-games">Aktuell kein Spiel</span>
+</li>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+<name>cntnd_schedule_results</name>
+<description>
+cntnd_schedule_results
+Resultate (cntnd_schedule)
+
+Autor Thomas D Ascoli, thomas@dasco.li
+
+Version 1.0.0
+</description>
+<type/>
+<alias>cntnd_schedule_results</alias>
+</module>
