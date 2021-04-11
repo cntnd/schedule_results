@@ -1,1 +1,4 @@
-/* cntnd_schedule */
+/* cntnd_core */
+$(document).ready(function(){
+
+});

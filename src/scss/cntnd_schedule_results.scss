@@ -1,95 +1,54 @@
-/* cntnd_schedule */
+/* cntnd_booking */
 @import url('https://cdn.jsdelivr.net/gh/cntnd/core_style@0.1.1/dist/core_style.css');
+@import url('https://rsms.me/inter/inter.css');
+@import '_vars.scss';
 
-.form-control-sm {
-  font-size: 11px !important;
+.content_box {
+	border: 1px solid silver;
+}
+.content_type_label {
+	background: silver;
 }
 
-.form-group {
-  margin-bottom: .5rem !important;
+.hide {
+	display: none !important;
 }
 
-label {
-  margin-bottom: .25rem !important;
+.show {
+	display: block !important;
 }
 
-.card-body {
-  padding: .5rem !important;
-}
-
-.col-title {
-  font-weight: 700;
-  padding: 5px 10px;
-  border-bottom: 1px solid darkgray;
-}
-
-.sortable {
-  min-height: 40px;
-}
-
-.list-group {
-  padding: 0;
-}
-
-.list-group-item {
-  position: relative;
-  display: block;
-  padding: .75rem 1.25rem;
-  margin-bottom: -1px;
-  background-color: #fff;
-  border: 1px solid rgba(0,0,0,.125);
-}
-
-.list-group-item i {
-  -webkit-transition: opacity .2s;
-  transition: opacity .2s;
-  opacity: 0;
-  display: block;
-  cursor: pointer;
-  color: #c00;
-  position: absolute;
-  font-style: normal;
-  right: .75rem;
-  top: .5rem;
-  font-size: 1rem;
-}
-.list-group-item:hover i {
-  opacity: 1;
-}
-
-.w-33 {
-  margin-inside: 10px;
+/* OUTPUT */
+.content_box,
+.content_box td,
+.content_box th, {
+	font-family: Inter !important;
 }
 
 /* FRONTEND */
-.games {
-  padding: 0;
+.results {
+	padding: 0;
 }
 
-.game {
-  list-style-type: none;
-  margin-bottom: 10px;
+.result {
+	list-style-type: none;
+	margin-bottom: 10px;
 
-  &.game--first-team {
-    font-size: 1.25em;
-  }
+	&.result--first-team {
+		font-size: 1.25em;
+	}
 
-  > span {
-    display: block;
-  }
+	> span {
+		display: block;
+	}
 
-  .game__team {
-    font-weight: bold;
-  }
+	.result__team {
+		font-weight: bold;
+	}
+}
 
-  .game__no-games,
-  .game__description {
-    font-style: italic;
-  }
-
-  .game__date-time,
-  .game__place,
-  .game__description {
-    font-size: .75em;
-  }
+.result__game {
+	.result__game-result {
+		float: right;
+	}
 }

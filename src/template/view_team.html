@@ -1,15 +1,7 @@
-<li class="game">
-    <span class="game__team">
-        {if $spiel.data_url neq ''}
-            <a href="{$spiel.data_url}" target="_blank">{$spiel.data_team}</a>
-        {else}
-            {$spiel.data_team}
-        {/if}
-    </span>
-    <span class="game__date-time">{$spiel.data_full_date}</span>
-    <span class="game__place">{$spiel.Spielort}</span>
-    <span class="game__teams">
-        {$spiel.TeamA} – {$spiel.TeamB}
-        {if $spiel.SpielTyp neq ''}<span class="game__type">{$spiel.SpielTyp}</span>{/if}
+<li class="result">
+    <span class="result__game">
+        <span class="result__game-teams">{$spiel.TeamA} – {$spiel.TeamB}</span>
+        {if $spiel.data_spiel_typ neq ''}<span class="result__game-type">{$spiel.data_spiel_typ}</span>{/if}
+        <span class="result__game-result">{$spiel.Resultat}</span>
     </span>
 </li>

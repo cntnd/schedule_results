@@ -1,7 +1,7 @@
 {
   "name": "cntnd_schedule_results",
   "version": "1.0.0",
-  "description": "Resultate (cntnd_schedule)",
+  "description": "Resultate",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cntnd/schedule.git"
@@ -11,14 +11,15 @@
     "gulp": "^4.0.2",
     "gulp-file": "^0.4.0",
     "gulp-minifier": "^2.0.0",
-    "gulp-sass": "^4.1.0",
-    "gulp-zip": "^5.0.1",
-    "kind-of": ">=6.0.3"
+    "gulp-zip": "^5.0.1"
   },
   "author": "Thomas D Ascoli, thomas@dasco.li",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/cntnd/schedule/issues"
   },
-  "homepage": "https://github.com/cntnd/schedule#readme"
+  "homepage": "https://github.com/cntnd/schedule#readme",
+  "dependencies": {
+    "gulp-sass": "^4.1.0"
+  }
 }

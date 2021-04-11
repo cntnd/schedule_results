@@ -1,32 +1,29 @@
 {if $active}
-    <ul class="games">
-    {foreach from=$spieleLeft item=spiel name=spieleLeft}
-        {if $spiel.noData}
-            {include file="cntnd_schedule/template/view_team_no-data.html" spiel=$spiel}
-        {else}
-            {if !$spiel.data_first_team}
-                {include file="cntnd_schedule/template/view_team_default.html" spiel=$spiel}
-            {else}
-                {include file="cntnd_schedule/template/view_erste_mannschaft.html" spiel=$spiel}
-            {/if}
-        {/if}
-    {/foreach}
-    </ul>
+    <div class="card" style="width: 400px;">
+        <div class="card-body">
+            <strong>Aktive</strong>
+            <ul class="results">
+            {foreach from=$aktive item=spiel name=aktive}
+                {include file="cntnd_spreadsheet/template/view_team.html" spiel=$spiel}
+            {/foreach}
+            </ul>
 
-    <ul class="games">
-        {foreach from=$spieleRight item=spiel name=spieleRight}
-            {if $spiel.noData}
-                {include file="cntnd_schedule/template/view_team_no-data.html" spiel=$spiel}
-            {else}
-                {if !$spiel.data_custom_team}
-                    {include file="cntnd_schedule/template/view_team_default.html" spiel=$spiel}
-                {else}
-                    {include file="cntnd_schedule/template/view_custom_team.html" spiel=$spiel}
-                {/if}
-            {/if}
-        {/foreach}
-    </ul>
-    <p><small>* = Testspiel / (C) = Cupspiel</small></p>
+            <strong>Junioren</strong>
+            <ul class="results">
+                {foreach from=$junioren item=spiel name=junioren}
+                {include file="cntnd_spreadsheet/template/view_team.html" spiel=$spiel}
+                {/foreach}
+            </ul>
+
+            <strong>Kinderfussball</strong>
+            <ul class="results">
+                {foreach from=$kifu item=spiel name=kifu}
+                {include file="cntnd_spreadsheet/template/view_team.html" spiel=$spiel}
+                {/foreach}
+            </ul>
+            <p><small>* = Testspiel / (C) = Cupspiel</small></p>
+        </div>
+    </div>
 {else}
-    <strong>Momentan keine Spiele</strong>
+    <strong>Momentan keine Resultate</strong>
 {/if}
