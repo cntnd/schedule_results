@@ -4,7 +4,7 @@
   "description": "Resultate",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cntnd/schedule.git"
+    "url": "git+https://github.com/cntnd/schedule_results.git"
   },
   "devDependencies": {
     "del": "^5.1.0",
@@ -16,9 +16,9 @@
   "author": "Thomas D Ascoli, thomas@dasco.li",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cntnd/schedule/issues"
+    "url": "https://github.com/cntnd/schedule_results/issues"
   },
-  "homepage": "https://github.com/cntnd/schedule#readme",
+  "homepage": "https://github.com/cntnd/schedule_results#readme",
   "dependencies": {
     "gulp-sass": "^4.1.0"
   }
