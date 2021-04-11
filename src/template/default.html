@@ -4,21 +4,21 @@
             <strong>Aktive</strong>
             <ul class="results">
             {foreach from=$aktive item=spiel name=aktive}
-                {include file="cntnd_spreadsheet/template/view_team.html" spiel=$spiel}
+                {include file="cntnd_schedule_results/template/view_team.html" spiel=$spiel}
             {/foreach}
             </ul>
 
             <strong>Junioren</strong>
             <ul class="results">
                 {foreach from=$junioren item=spiel name=junioren}
-                {include file="cntnd_spreadsheet/template/view_team.html" spiel=$spiel}
+                {include file="cntnd_schedule_results/template/view_team.html" spiel=$spiel}
                 {/foreach}
             </ul>
 
             <strong>Kinderfussball</strong>
             <ul class="results">
                 {foreach from=$kifu item=spiel name=kifu}
-                {include file="cntnd_spreadsheet/template/view_team.html" spiel=$spiel}
+                {include file="cntnd_schedule_results/template/view_team.html" spiel=$spiel}
                 {/foreach}
             </ul>
             <p><small>* = Testspiel / (C) = Cupspiel</small></p>
