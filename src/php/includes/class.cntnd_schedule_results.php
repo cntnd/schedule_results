@@ -14,16 +14,16 @@ class CntndScheduleResults {
   }
 
   public function store(array $post){
-    if ($post['cntnd_spreadsheet-csv']){
+    if ($post['cntnd_schedule_results-csv']){
       $fp = fopen($this->file, 'w');
 
-      if (!empty($post['cntnd_spreadsheet-headers'])){
-        $b64h = base64_decode($_POST['cntnd_spreadsheet-headers']);
+      if (!empty($post['cntnd_schedule_results-headers'])){
+        $b64h = base64_decode($_POST['cntnd_schedule_results-headers']);
         $headers = json_decode($b64h);
         fputcsv($fp, str_getcsv($headers,','),$this->separator);
       }
 
-      $b64c = base64_decode($_POST['cntnd_spreadsheet-csv']);
+      $b64c = base64_decode($_POST['cntnd_schedule_results-csv']);
       $csv = json_decode($b64c);
       foreach ($csv as $fields) {
           fputcsv($fp, $fields, $this->separator);
@@ -47,7 +47,7 @@ class CntndScheduleResults {
         $headers .= "[";
         $keys = str_getcsv($row,$this->separator);
         foreach ($keys as $value) {
-          $headers .= "{ title: '".$value."' },";
+          $headers .= "{ type: 'text', title: '".$value."' },";
         }
         $headers .= "]";
       }
