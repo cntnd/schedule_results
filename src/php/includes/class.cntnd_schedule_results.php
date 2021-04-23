@@ -7,10 +7,17 @@ class CntndScheduleResults {
 
   private $file;
   private $separator;
+  private $vereinsnummer;
+  private $simple;
 
-  function __construct(string $file, string $separator=",") {
+  function __construct(string $file, string $separator=",", string $vereinsnummer = "", bool $simple = false) {
     $this->file = $file;
     $this->separator = $separator;
+    $this->vereinsnummer = $vereinsnummer;
+    $this->simple = $simple;
+    if (empty($vereinsnummer)){
+      $this->simple = true;
+    }
   }
 
   public function store(array $post){
@@ -96,14 +103,16 @@ class CntndScheduleResults {
 
       $TeamA = $data["TeamnameA"];
       $TeamB = $data["TeamnameB"];
-      if ($data["VereinsnummerA"] == '10330') {
-        $TeamA = $data["Bezeichnung"];
+      if (!$this->simple) {
+        if ($data["VereinsnummerA"] == $this->vereinsnummer) {
+          $TeamA = $data["Bezeichnung"];
+        }
+        if ($data["VereinsnummerB"] == $this->vereinsnummer) {
+          $TeamB = $data["Bezeichnung"];
+        }
       }
-      if ($data["VereinsnummerB"] == '10330') {
-        $TeamB = $data["Bezeichnung"];
-      }
-      $data['TeamA']=$TeamA;
-      $data['TeamB']=$TeamB;
+      $data['TeamA'] = $TeamA;
+      $data['TeamB'] = $TeamB;
 
       $SpielTyp = "";
       if ($data['SpielType'] == "Trainingsspiele") {

@@ -11,12 +11,17 @@ $editmode = cRegistry::isBackendEditMode();
 $filename = "CMS_VALUE[1]";
 $separator = "CMS_VALUE[2]";
 $moduleActive = "CMS_VALUE[3]";
+$simpleMode = "CMS_VALUE[4]";
+$vereinsnummer = "CMS_VALUE[5]";
+if ($simpleMode){
+    $vereinsnummer = "";
+}
 
 // includes #1
 cInclude('module', 'includes/class.cntnd_schedule_results.php');
 
 // other/vars
-$results = new CntndScheduleResults($filename, $separator);
+$results = new CntndScheduleResults($filename, $separator, $vereinsnummer, $simpleMode);
 
 // includes #2
 if ($editmode){

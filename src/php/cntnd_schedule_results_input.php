@@ -10,7 +10,7 @@ if (empty($separator)){
 $files = array();
 
 // includes
-cInclude('module', 'includes/style.cntnd_schedule_results_input.php');
+cInclude('module', 'includes/script.cntnd_schedule_results_input.php');
 
 // data load
 $db = new cDb;
@@ -34,14 +34,28 @@ while ($db->nextRecord()) {
 <div class="form-vertical">
     <div class="form-group">
         <div class="form-check form-check-inline">
-            <input id="activate_module" class="form-check-input" type="checkbox" name="CMS_VAR[3]" value="true" <?php if("CMS_VALUE[3]"=='true'){ echo 'checked'; } ?> />
-            <label for="activate_module" class="form-check-label"><?= mi18n("ACTIVATE_MODULE") ?></label>
+            <input id="cntnd_schedule_results-activate_module" class="form-check-input" type="checkbox" name="CMS_VAR[3]" value="true" <?php if("CMS_VALUE[3]"=='true'){ echo 'checked'; } ?> />
+            <label for="cntnd_schedule_results-activate_module" class="form-check-label"><?= mi18n("ACTIVATE_MODULE") ?></label>
         </div>
     </div>
 
     <div class="form-group">
-        <label for="filename"><?= mi18n("LABEL_FILE") ?></label>
-        <select name="CMS_VAR[1]" id="filename" size="1" onchange="this.form.submit()">
+        <div class="form-check form-check-inline">
+            <input id="cntnd_schedule_results-simple" class="form-check-input" type="checkbox" name="CMS_VAR[4]" value="true" <?php if("CMS_VALUE[4]"=='true'){ echo 'checked'; } ?> />
+            <label for="cntnd_schedule_results-simple" class="form-check-label"><?= mi18n("SIMPLE") ?></label>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="cntnd_schedule_results-vereinsnummer"><?= mi18n("VEREINSNUMMER") ?></label>
+        <input id="cntnd_schedule_results-vereinsnummer" type="text" name="CMS_VAR[5]" value="CMS_VALUE[5]" />
+    </div>
+
+    <hr />
+
+    <div class="form-group">
+        <label for="cntnd_schedule_results-filename"><?= mi18n("LABEL_FILE") ?></label>
+        <select name="CMS_VAR[1]" id="schedule_results-filename" size="1" onchange="this.form.submit()">
             <option value="false"><?= mi18n("SELECT_CHOOSE") ?></option>
             <?php
             foreach ($files as $value) {
@@ -56,8 +70,8 @@ while ($db->nextRecord()) {
     </div>
 
     <div class="form-group">
-        <label for="filename"><?= mi18n("LABEL_SEPARATOR") ?></label>
-        <input type="text" maxlength="1" name="CMS_VAR[2]" value="<?= $separator ?>"/>
+        <label for="cntnd_schedule_results-separator"><?= mi18n("LABEL_SEPARATOR") ?></label>
+        <input id="cntnd_schedule_results-separator" type="text" maxlength="1" name="CMS_VAR[2]" value="<?= $separator ?>"/>
     </div>
 </div>
 <?php
